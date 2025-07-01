@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BookZone - Home</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <script>
+  const token = localStorage.getItem("token");
+  if (!token) {
+    window.location.href = "login.html"; // redirect to login if not logged in
+  }
+</script>
+
+  <header class="header">
+    <div class="container header-flex">
+      <h1 class="logo">BookZone</h1>
+      <nav class="header-icons">
+        <a href="profile.html">Profile</a>
+        <a href="cart.html">Cart</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Search Bar -->
+  <section class="search-bar container">
+    <input type="text" id="searchInput" placeholder="Search books by title..." />
+    <button id="searchBtn">Search</button>
+  </section>
+
+  <!-- Search Results -->
+  <section class="search-results container" id="searchResults"></section>
+
+  <!-- Quote Banner -->
+  <section class="quote-banner">
+    <p>"A reader lives a thousand lives before he dies..." – George R.R. Martin</p>
+  </section>
+
+  <!-- Intro -->
+  <section class="intro container">
+    <h2>Welcome to BookZone</h2>
+    <p>Explore our wide collection across Fiction, Motivation, Self-Help, Science, History, and Children's books.</p>
+  </section>
+
+  <!-- Book Categories -->
+  <section class="home container">
+    <h2>Book Categories</h2>
+    <div class="category-grid">
+      <a href="fiction.html" class="category-card">
+        <img src="images/fiction.jpg" alt="Fiction Books" />
+        <h3>Fiction</h3>
+      </a>
+      <a href="motivation.html" class="category-card">
+        <img src="images/motivation.jpg" alt="Motivation Books" />
+        <h3>Motivation</h3>
+      </a>
+      <a href="selfhelp.html" class="category-card">
+        <img src="images/selfhelp.jpg" alt="Self Help Books" />
+        <h3>Self-Help</h3>
+      </a>
+      <a href="science.html" class="category-card">
+        <img src="images/science.jpg" alt="Science Books" />
+        <h3>Science</h3>
+      </a>
+      <a href="children.html" class="category-card">
+        <img src="images/children.jpg" alt="Children Books" />
+        <h3>Children</h3>
+      </a>
+      <a href="history.html" class="category-card">
+        <img src="images/history.jpg" alt="History Books" />
+        <h3>History</h3>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+  <p>&copy; 2025 BookZone. All rights reserved. 
+    <a href="admin/login.html" style="color: lightblue; margin-left: 10px;">Admin Login</a>
+  </p>
+</footer>
+
+
+  <!-- JS -->
+  <script src="js/home.js" defer></script>
+</body>
+</html>

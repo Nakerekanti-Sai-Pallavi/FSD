@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Orders - BookZone</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <script>
+    const token = localStorage.getItem("adminToken");
+    if (!token) window.location.href = "login.html";
+  </script>
+
+  <header class="admin-header">
+    <h1>📦 Customer Orders</h1>
+    <button onclick="location.href='dashboard.html'">← Back to Dashboard</button>
+  </header>
+
+  <main class="orders-container">
+    <div id="ordersList"></div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 BookZone Admin. All rights reserved.</p>
+  </footer>
+
+  <script src="js/orders.js" defer></script>
+</body>
+</html>

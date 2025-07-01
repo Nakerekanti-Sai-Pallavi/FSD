@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard - BookZone</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <script>
+    const token = localStorage.getItem("adminToken");
+    if (!token) window.location.href = "login.html";
+  </script>
+
+  <header class="admin-header">
+    <h1>📚 BookZone Admin Panel</h1>
+    <button id="logoutBtn">Logout</button>
+  </header>
+
+  <main class="admin-dashboard">
+    <div class="admin-card" onclick="location.href='books.html'">
+      <h2>📘 Manage Books</h2>
+      <p>Add, edit, and delete books in the store.</p>
+    </div>
+    <div class="admin-card" onclick="location.href='orders.html'">
+      <h2>📦 View Orders</h2>
+      <p>See all customer orders and details.</p>
+    </div>
+    <!-- Optional Users section -->
+    <!--
+    <div class="admin-card" onclick="location.href='users.html'">
+      <h2>👤 Manage Users</h2>
+      <p>View all registered users.</p>
+    </div>
+    -->
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 BookZone Admin. All rights reserved.</p>
+  </footer>
+
+  <script src="js/dashboard.js" defer></script>
+</body>
+</html>

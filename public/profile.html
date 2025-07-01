@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Profile - BookZone</title>
+  <link rel="stylesheet" href="/styles/profile.css" />
+</head>
+<body>
+  <script>
+    const token = localStorage.getItem('token');
+    if (!token) window.location.href = 'login.html';
+  </script>
+
+  <header class="header">
+    <div class="container header-flex">
+      <h1>My Profile</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="cart.html">Cart</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="profile container">
+    <form id="profileForm">
+      <label>
+        Name:
+        <input type="text" id="name" disabled />
+      </label>
+      <label>
+        Email:
+        <input type="email" id="email" disabled />
+      </label>
+      <label>
+        New Password:
+        <input type="password" id="password" placeholder="Leave blank to keep current" disabled />
+      </label>
+      <div class="buttons">
+        <button type="button" id="editBtn">Edit</button>
+        <button type="submit" id="saveBtn" class="hidden">Save</button>
+        <button type="button" id="cancelBtn" class="hidden">Cancel</button>
+      </div>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 BookZone. All rights reserved.</p>
+  </footer>
+
+  <script src="/js/profile.js" defer></script>
+</body>
+</html>

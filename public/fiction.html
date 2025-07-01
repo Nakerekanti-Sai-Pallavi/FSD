@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fiction Books - BookZone</title>
+  <link rel="stylesheet" href="/styles/category.css" />
+</head>
+<body data-category="Fiction">
+
+<!-- Redirect if not logged in -->
+<script>
+  const token = localStorage.getItem("token");
+  if (!token) {
+    window.location.href = "login.html";
+  }
+</script>
+
+<!-- Header -->
+<header class="header">
+  <div class="container header-flex">
+    <h1 class="logo">BookZone</h1>
+    <nav class="header-icons">
+      <a href="index.html">Home</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Book Section -->
+<section class="category-page container">
+  <h2>Fiction Books</h2>
+  <div class="book-list" id="bookList"></div>
+  <div class="back-btn">
+    <a href="index.html">← Back to Home</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy; 2025 BookZone. All rights reserved.</p>
+</footer>
+
+<!-- JS -->
+<script src="/js/category.js" defer></script>
+</body>
+</html>

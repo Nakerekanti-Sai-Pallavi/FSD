@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart - BookZone</title>
+  <link rel="stylesheet" href="/styles/cart.css" />
+</head>
+<body>
+  <!-- Redirect if not logged in -->
+  <script>
+    const token = localStorage.getItem("token");
+    if (!token) window.location.href = "login.html";
+  </script>
+
+  <header class="header">
+    <div class="container">
+      <h1>My Cart</h1>
+      <a href="index.html">Home</a>
+    </div>
+  </header>
+
+  <section class="cart container">
+    <div id="cartList" class="cart-list"></div>
+    <h3 id="total" class="cart-total">Total: ₹0</h3>
+
+    <!-- Order Section -->
+    <div class="order-section">
+      <h3>Delivery Details</h3>
+      <form id="orderForm">
+        <input type="text" id="addressName" placeholder="Full Name" required />
+        <input type="tel" id="addressMobile" placeholder="Mobile Number" required pattern="[0-9]{10}" />
+        <input type="text" id="addressDoor" placeholder="House No., Street, Building" required />
+        <input type="text" id="addressCity" placeholder="City" required />
+        <input type="text" id="addressState" placeholder="State" required />
+        <input type="text" id="addressPincode" placeholder="Pincode" required pattern="[0-9]{6}" />
+        <button type="submit" id="placeOrderBtn">Place Order (COD)</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 BookZone. All rights reserved.</p>
+  </footer>
+
+  <script src="/js/cart.js" defer></script>
+</body>
+</html>
